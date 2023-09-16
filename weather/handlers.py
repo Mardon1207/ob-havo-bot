@@ -7,7 +7,7 @@ from .db import DB
 
 db = DB('db.json')
 
-API_KEY = os.getenv("API_KEY")
+API_KEY="e103948f1d6901c91a9f0781706e976b"
 
 
 def start(update: Update, context: CallbackContext):
@@ -52,7 +52,7 @@ def send_weather(update: Update, context: CallbackContext):
     if data["cod"] == 200:
         update.message.reply_text(
             text=FORECAST_TAMP.format(
-                date=update.message.date.strftime("%A, %-d-%B"),
+                date=update.message.date.strftime("%A, %d-%B"),
                 city=data["name"],
                 description=data["weather"][0]["description"],
                 temp=data["main"]["temp"] - 273.15,
