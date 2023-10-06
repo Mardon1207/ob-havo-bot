@@ -11,7 +11,7 @@ def delete():
 
 
 def set():
-    url = 'https://mardon1207.pythonanywhere.com/weather/'
+    url = 'https://mardon1207.pythonanywhere.com/obhavo/'
     print(bot.set_webhook(url=url))
 
 set()

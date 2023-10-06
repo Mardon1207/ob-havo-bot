@@ -22,7 +22,7 @@ from handlers import (
 
 app = Flask(__name__)
 
-@app.route("/setwebhook/", methods=["GET", "POST"])
+@app.route("/obhavo/", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
     

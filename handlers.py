@@ -2,8 +2,8 @@ from telegram import Update, ReplyKeyboardMarkup, KeyboardButton
 from telegram.ext import CallbackContext
 import os
 import requests
-from .temp import FORECAST_TAMP
-from .db import DB,LOC
+from temp import FORECAST_TAMP
+from db import DB,LOC
 
 db = DB('db.json')
 loc=LOC('location.json')
