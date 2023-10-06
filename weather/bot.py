@@ -13,15 +13,21 @@ from telegram.ext import (
 
 from .handlers import (
     start,
+    send_location,
     send_weather,
+    hudud,
+    aloqa
 )
 
 updater = Updater(token=TOKEN)
-dispatcher = updater.dispatcher
+dp = updater.dispatcher
 
 def register_handlers():
-    dispatcher.add_handler(CommandHandler("start", start))
-    dispatcher.add_handler(MessageHandler(Filters.location, send_weather))
+    dp.add_handler(CommandHandler("start", start))
+    dp.add_handler(MessageHandler(Filters.location, send_location))
+    dp.add_handler(MessageHandler(Filters.text("⛅️ Hozirgi ob-havo"), send_weather))
+    dp.add_handler(MessageHandler(Filters.text("📍 Hududni o'zgartirish"), hudud))
+    dp.add_handler(MessageHandler(Filters.text("📞 Aloqa"), aloqa))
 
     updater.start_polling()
     updater.idle()
